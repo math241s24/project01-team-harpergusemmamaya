@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: Seattle Bike
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/aallorant/project01-seattle-bike
+    left:
+      - text: Project
+        href: index.qmd
+      - text: "Proposal"
+        href: proposal.qmd
+      - text: "Presentation"
+        href: presentation.qmd
+      - text: "About"
+        href: about.qmd
+
+format:
+  html:
+    theme: default
+    toc: true
+
+execute:
+  freeze: auto

@@ -1,0 +1,14 @@
+---
+title: "Project Proposal"
+format: html
+editor: visual
+---
+
+# Proposal
+
+Your proposal should include:
+
+* A brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)
+* The reason why you chose this dataset.
+* The two questions you want to answer.
+  + A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).

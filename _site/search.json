@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "Proposal\nYour proposal should include:\n\nA brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)\nThe reason why you chose this dataset.\nThe two questions you want to answer.\n\nA plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project Write-up",
+    "section": "",
+    "text": "Your write-up should consist of three parts:\n\n\nBrief introduction to the dataset. You may repeat some of the information about the dataset provided in the introduction to the dataset on the TidyTuesday repository, for instance. Imagine that your project is a standalone document and the grader has no prior knowledge of the dataset.\n\n\nThe title should relate to the question you’re answering.\n\n\nIntroduction to the question and what parts of the dataset are necessary to answer the question. Also discuss why you’re interested in this question.\n\n\n\nDescribe what types of plots you are going to make to address your question. For each plot, provide a clear explanation as to why this plot (e.g. boxplot, barplot, histogram, etc.) is best for providing the information you are asking about. The two plots should be of different types, and at least one of the two plots needs to use either color mapping or facets.\n\n\n\nIn this section, provide the code that generates your plots. Use scale functions to provide nice axis labels and guides. You are welcome to use theme functions to customize the appearance of your plot, but you are not required to do so. All plots must be made with ggplot2. Do not use base R or lattice plotting functions.\n\n\n\nIn the Discussion section, interpret the results of your analysis. Identify any trends revealed (or not revealed) by the plots. Speculate about why the data looks the way it does.\n\n\n\n\nSame structure outlined for Question 1, but for your new question. And the title should relate to the question you’re answering.\nWe encourage you to be concise. A paragraph should typically not be longer than 5 sentences.\nYou are not required to perform any statistical tests in this project, but you may do so if you find it helpful to answer your question."
+  },
+  {
+    "objectID": "index.html#introduction-1-2-paragraphs",
+    "href": "index.html#introduction-1-2-paragraphs",
+    "title": "Project Write-up",
+    "section": "",
+    "text": "Brief introduction to the dataset. You may repeat some of the information about the dataset provided in the introduction to the dataset on the TidyTuesday repository, for instance. Imagine that your project is a standalone document and the grader has no prior knowledge of the dataset.\n\n\nThe title should relate to the question you’re answering.\n\n\nIntroduction to the question and what parts of the dataset are necessary to answer the question. Also discuss why you’re interested in this question.\n\n\n\nDescribe what types of plots you are going to make to address your question. For each plot, provide a clear explanation as to why this plot (e.g. boxplot, barplot, histogram, etc.) is best for providing the information you are asking about. The two plots should be of different types, and at least one of the two plots needs to use either color mapping or facets.\n\n\n\nIn this section, provide the code that generates your plots. Use scale functions to provide nice axis labels and guides. You are welcome to use theme functions to customize the appearance of your plot, but you are not required to do so. All plots must be made with ggplot2. Do not use base R or lattice plotting functions.\n\n\n\nIn the Discussion section, interpret the results of your analysis. Identify any trends revealed (or not revealed) by the plots. Speculate about why the data looks the way it does.\n\n\n\n\nSame structure outlined for Question 1, but for your new question. And the title should relate to the question you’re answering.\nWe encourage you to be concise. A paragraph should typically not be longer than 5 sentences.\nYou are not required to perform any statistical tests in this project, but you may do so if you find it helpful to answer your question."
+  },
+  {
+    "objectID": "presentation.html#outline",
+    "href": "presentation.html#outline",
+    "title": "Project Presentation",
+    "section": "Outline",
+    "text": "Outline\n\nYour presentation should generally follow the same structure as your write-up.\nEach team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time.\nYour presentation will be created using Quarto, which allows you to write slides using the same coding structure you’re used to with Rmarkdown.\nThis is a sample Quarto slide template you can edit to your desire to create your presentation."
+  },
+  {
+    "objectID": "presentation.html#rubric",
+    "href": "presentation.html#rubric",
+    "title": "Project Presentation",
+    "section": "Rubric",
+    "text": "Rubric\n\nRoughly I recommend 1 slide for introduction, 2 slides for Question 1, ans 2 slides for Question 2.\n\nYou can imagine spending roughly one minute on each slide.\nYou should feel free to have more (or fewer) slides.\n\nYour evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&A (question and answer). We don’t care how many slides you use to do this."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project is developed by Adrien as a template for the first mini-project of Math/Stat 241 at Reed College."
+  }
+]
