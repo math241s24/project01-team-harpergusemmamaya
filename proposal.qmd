@@ -8,7 +8,10 @@ editor: visual
 
 Your proposal should include:
 
-* A brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)
-* The reason why you chose this dataset.
-* The two questions you want to answer.
-  + A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+-   A brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)
+-   The reason why you chose this dataset.
+-   The two questions you want to answer.
+    -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+-   The two questions we want to answer are:
+    1.  How does bob Ross's color use change across time? Which colors are most popular in each season? 
+    2. Which seasons have the most diverse color pallettes? Which seasons have the most abundant color pallettes?
