@@ -13,5 +13,11 @@ Your proposal should include:
 -   The two questions you want to answer.
     -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
 -   The two questions we want to answer are:
-    1.  How does bob Ross's color use change across time? Which colors are most popular in each season? 
-    2. Which seasons have the most diverse color pallettes? Which seasons have the most abundant color pallettes?
+    1.  How does bob Ross's color use change across time? Which colors are most popular in each season?
+    2.  Which seasons have the most diverse color palettes? Which seasons have the most abundant color palettes?
+-   Our plans to answer each question are:
+    1.  Make a new variable combining season and episode using the mutate function. Make density plots/barplot for each color using that new time variable as the x-axis.
+    2.  Use the summarize function to count the average number of colors in each season, then use Simpson's diversity index to measure how diverse the color palettes are:
+        -   Diversity = 1 - sum(n(n-1)/N(N-1)), where:
+                - n = # times a color is used
+                - N = # times any color is used
