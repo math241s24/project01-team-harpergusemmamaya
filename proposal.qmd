@@ -12,6 +12,8 @@ Your proposal should include:
 -   The reason why you chose this dataset.
 -   The two questions you want to answer.
     -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+
+-   We chose to use this dataset because we're fans of Bob Ross and curious about how systematic he may or may not be in his color use across seasons.
 -   The two questions we want to answer are:
     1.  How does bob Ross's color use change across time? Which colors are most popular in each season?
     2.  Which seasons have the most diverse color palettes? Which seasons have the most abundant color palettes?
