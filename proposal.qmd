@@ -10,15 +10,24 @@ editor: visual
 Your proposal should include:
 
 -   A brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)
+
+-   <div>
+
+    -   The dataset we choose is a comprehensive collection of data about the paintings made by Bob Ross on his public television show. Each painting is an observation and the name of each painting is saved. Each paintings season and episode are recorded as well as a list of the colors used. Both the code for each color and the name for each color is documented. Some of the more commonly used colors were saved as variables with an indicator value of 1 or 0 showing whether or not that color was used. The number of unique or uncommon colors were recorded as well. The relative season of the painting was also documented in the dataset.
+
+    </div>
+
 -   The reason why you chose this dataset.
+
 -   The two questions you want to answer.
     -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
-    
+
 ```{r}
 library(readr)
 bob_ross <- 
 ```
-- We're using the bob ross dataset (https://github.com/jwilber/Bob_Ross_Paintings/blob/master/data/bob_ross_paintings.csv)   
+
+-   We're using the bob ross dataset (https://github.com/jwilber/Bob_Ross_Paintings/blob/master/data/bob_ross_paintings.csv)\
 -   We chose to use this dataset because we're fans of Bob Ross and curious about how systematic he may or may not be in his color use across seasons.
 -   The two questions we want to answer are:
     1.  How does bob Ross's color use change across time? Which colors are most popular in each season?
