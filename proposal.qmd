@@ -1,5 +1,6 @@
 ---
 title: "Project Proposal"
+authors: "Emma Campbell, Gus Compton, Harper Lethin, Maya"
 format: html
 editor: visual
 ---
