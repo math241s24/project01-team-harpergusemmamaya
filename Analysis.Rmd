@@ -1,0 +1,51 @@
+---
+title: "Analysis"
+output: html_document
+date: "2024-03-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Libraries
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+```
+
+
+
+```{r}
+library(readr)
+bob_ross <- read_csv("data/bob_ross_paintings.csv")
+view(bob_ross)
+```
+
+```{r}
+abundant_colors <- bob_ross %>%
+  group_by(season) %>%
+  summarize(mean(num_colors))
+abundant_colors
+```
+
+```{r}
+bob_ross_longer <- bob_ross %>%
+  pivot_longer(c("Black_Gesso", "Bright_Red", "Burnt_Umber", "Cadmium_Yellow", "Dark_Sienna", "Indian_Red", "Indian_Yellow", "Liquid_Black", "Liquid_Clear", "Midnight_Black", "Phthalo_Blue", "Phthalo_Green", "Prussian_Blue", "Sap_Green", "Titanium_White", "Van_Dyke_Brown", "Yellow_Ochre", "Alizarin_Crimson"), names_to = "Color", values_to = "Used") %>%
+  filter(Used == 1)
+
+#there has to be a better way to do this 
+hex_codes <- data.frame(color = c("Alizarin_Crimson", "Black_Gesso", "Bright_Red", "Burnt_Umber", "Cadmium_Yellow"), 
+                        hex = '#4E1500', '#000000', '#DB0000', '#8A3324', '#FFEC00' )
+
+color_density <- ggplot(data = bob_ross_longer, aes(x = season, y = Color, fill = Color)) +
+  geom_density_ridges(alpha = 0.4)
+color_density
+```
+
+
+
+
+
+
