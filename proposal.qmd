@@ -3,24 +3,10 @@ title: "Project Proposal"
 authors: "Emma Campbell, Gus Compton, Harper Lethin, Maya Gutierez"
 format: html
 editor: visual
+message: false
 ---
 
 # Proposal
-
-Your proposal should include:
-
--   A brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)
-
--   The dataset we choose is a comprehensive collection of data about the paintings made by Bob Ross on his public television show. Each painting is an observation and the name of each painting is saved. Each paintings season and episode are recorded as well as a list of the colors used. Both the code for each color and the name for each color is documented. Some of the more commonly used colors were saved as variables with an indicator value of 1 or 0 showing whether or not that color was used. The number of unique or uncommon colors were recorded as well. The relative season of the painting was also documented in the dataset.
-
--   The reason why you chose this dataset.
-
--   The two questions you want to answer.
-    -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
-<<<<<<< HEAD
-=======
--   We're using the bob ross dataset (https://github.com/jwilber/Bob_Ross_Paintings/blob/master/data/bob_ross_paintings.csv)
->>>>>>> e5b622c6273133f2548f7d76743c6ebe33612c85
 
 ```{r}
 library(readr)
@@ -28,10 +14,10 @@ bob_ross <- read_csv("data/bob_ross_paintings.csv")
 
 ```
 
-<<<<<<< HEAD
+The dataset we chose is a comprehensive collection of data about the paintings made by Bob Ross on his public television show. Each painting is an observation and the name of each painting is saved. Each paintings season and episode are recorded as well as a list of the colors used. Both the code for each color and the name for each color is documented. Some of the more commonly used colors were saved as variables with an indicator value of 1 or 0 showing whether or not that color was used. The number of unique or uncommon colors were recorded as well. The relative season of the painting was also documented in the dataset.
+
 -   We're using the bob ross dataset (https://github.com/jwilber/Bob_Ross_Paintings/blob/master/data/bob_ross_paintings.csv)\
-=======
->>>>>>> e5b622c6273133f2548f7d76743c6ebe33612c85
+
 -   We chose to use this dataset because we're fans of Bob Ross and curious about how systematic he may or may not be in his color use across seasons.
 -   The two questions we want to answer are:
     1.  How does bob Ross's color use change across time? Which colors are most popular in each season?
