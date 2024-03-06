@@ -15,6 +15,7 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(ggridges)
+library(vegan)
 ```
 
 
@@ -53,6 +54,71 @@ color_density <- ggplot(data = bob_ross_longer, aes(x = season, y = Color, fill 
 color_density
 ```
 
+```{r}
+#species diversity: 2 indices, Simpson and Shannon
+#Data wrangling:
+tidybob <- bob_ross %>%
+  select(c(painting_index, painting_title, season, Black_Gesso, Bright_Red, Burnt_Umber, Cadmium_Yellow, Dark_Sienna, Indian_Red, Indian_Yellow, Liquid_Black, Liquid_Clear, Midnight_Black, Phthalo_Blue, Phthalo_Green, Prussian_Blue, Sap_Green, Titanium_White, Van_Dyke_Brown, Yellow_Ochre, Alizarin_Crimson)) %>%
+  drop_na() %>%
+  pivot_longer(c("Black_Gesso", "Bright_Red", "Burnt_Umber", "Cadmium_Yellow", "Dark_Sienna", "Indian_Red", "Indian_Yellow", "Liquid_Black", "Liquid_Clear", "Midnight_Black", "Phthalo_Blue", "Phthalo_Green", "Prussian_Blue", "Sap_Green", "Titanium_White", "Van_Dyke_Brown", "Yellow_Ochre", "Alizarin_Crimson"), names_to = "color", values_to = "count")
+#simpson diversity index
+for (season_number in 1:31) {
+  # Filter data for each season
+  temp_data <- tidybob %>%
+    filter(season == season_number) %>%
+    group_by(color) %>%
+    filter(count > 0) %>%
+    summarize(number = n())
+  
+  # Calculate proportion
+  temp_data <- temp_data %>%
+    mutate(proportion = number/sum(number))
+  
+  #Calculate simpson diversity
+  simpsondiversity <- diversity(temp_data$number, index = "simpson", equalize.groups = FALSE,
+                      MARGIN = 1, base = exp(1))
+}
+
+#shannon diversity index
+for (season_number in 1:31) {
+  # Filter data for each season
+  temp_data2 <- tidybob %>%
+    filter(season == season_number) %>%
+    group_by(color) %>%
+    filter(count > 0) %>%
+    summarize(number = n())
+  
+  # Calculate proportion
+  temp_data2 <- temp_data2 %>%
+    mutate(proportion = number/sum(number))
+  
+  #Calculate shannon diversity
+  shannondiversity <- diversity(temp_data2$number, index = "shannon", equalize.groups = FALSE,
+                      MARGIN = 1, base = exp(1))
+}
+
+seasonno <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31)
+simpsond <- c(0.8780718, 0.9190012, 0.9171143, 0.9195266, 0.917458, 0.9154412, 0.9187046, 0.9170342, 0.9180612, 0.9208364, 0.918457, 0.9237076, 0.9206671, 0.9240631, 0.9222083, 0.9203609, 0.9223511, 0.9223934, 0.9235672, 0.9208107, 0.927097, 0.9236437, 0.9233942, 0.9257509, 0.9232818, 0.9262543, 0.9280345, 0.9204545, 0.9241835, 0.9253637, 0.9246181)
+shannond <- c(2.131576, 2.530038, 2.54985, 2.566073, 2.565492, 2.504565, 2.549228, 2.535804, 2.562325, 2.578084, 2.550194, 2.627699, 2.572248, 2.612864, 2.595449, 2.566761, 2.602236, 2.612732, 2.620094, 2.584851, 2.653685, 2.622077, 2.61255, 2.647941, 2.611549, 2.642795, 2.689755, 2.591084, 2.623845, 2.633915, 2.647335)
+diversity_results <- data.frame(seasonno, simpsond, shannond)
+
+
+diversity_results %>%
+  ggplot(aes(x = seasonno, y = simpsond)) +
+  geom_point() +
+  theme_minimal() +
+  labs(x = "Season", y = "Simpson diversity index", title = "Species diversity of colors in Bob Ross paintings over time") +
+  geom_line()
+
+diversity_results %>%
+  ggplot(aes(x = seasonno, y = shannond)) +
+  geom_point() +
+  theme_minimal() +
+  labs(x = "Season", y = "Shannon diversity index", title = "Species diversity of colors in Bob Ross paintings over time") +
+  geom_line()
+
+
+```
 
 
 
