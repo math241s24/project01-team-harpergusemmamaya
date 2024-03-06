@@ -24,8 +24,8 @@
     "objectID": "presentation.html#outline",
     "href": "presentation.html#outline",
     "title": "Project Presentation",
-    "section": "",
-    "text": "Your presentation should generally follow the same structure as your write-up.\nEach team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time.\nYour presentation will be created using Quarto, which allows you to write slides using the same coding structure you’re used to with Rmarkdown.\nThis is a sample Quarto slide template you can edit to your desire to create your presentation."
+    "section": "Outline",
+    "text": "Outline\n\nYour presentation should generally follow the same structure as your write-up.\nEach team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time.\nYour presentation will be created using Quarto, which allows you to write slides using the same coding structure you’re used to with Rmarkdown.\nThis is a sample Quarto slide template you can edit to your desire to create your presentation."
   },
   {
     "objectID": "presentation.html#rubric",
@@ -67,6 +67,6 @@
     "href": "presentation.html#question-1",
     "title": "Project Presentation",
     "section": "Question 1",
-    "text": "Question 1"
+    "text": "Question 1\n\n\nBob Ross’s color use across seasons."
   }
 ]
