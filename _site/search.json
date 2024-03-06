@@ -24,8 +24,8 @@
     "objectID": "presentation.html#outline",
     "href": "presentation.html#outline",
     "title": "Project Presentation",
-    "section": "Outline",
-    "text": "Outline\n\nYour presentation should generally follow the same structure as your write-up.\nEach team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time.\nYour presentation will be created using Quarto, which allows you to write slides using the same coding structure you’re used to with Rmarkdown.\nThis is a sample Quarto slide template you can edit to your desire to create your presentation."
+    "section": "",
+    "text": "Your presentation should generally follow the same structure as your write-up.\nEach team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time.\nYour presentation will be created using Quarto, which allows you to write slides using the same coding structure you’re used to with Rmarkdown.\nThis is a sample Quarto slide template you can edit to your desire to create your presentation."
   },
   {
     "objectID": "presentation.html#rubric",
@@ -47,5 +47,26 @@
     "title": "Analysis",
     "section": "",
     "text": "#Libraries\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(ggridges)\n\n\nlibrary(readr)\nbob_ross &lt;- read_csv(\"data/bob_ross_paintings.csv\")\n\nNew names:\nRows: 403 Columns: 28\n── Column specification\n──────────────────────────────────────────────────────── Delimiter: \",\" chr\n(5): img_src, painting_title, youtube_src, colors, color_hex dbl (23): ...1,\npainting_index, season, episode, num_colors, Black_Gesso, Br...\nℹ Use `spec()` to retrieve the full column specification for this data. ℹ\nSpecify the column types or set `show_col_types = FALSE` to quiet this message.\n• `` -&gt; `...1`\n\nview(bob_ross)\n\n\nabundant_colors &lt;- bob_ross %&gt;%\n  group_by(season) %&gt;%\n  summarize(mean(num_colors))\nabundant_colors\n\n# A tibble: 31 × 2\n   season `mean(num_colors)`\n    &lt;dbl&gt;              &lt;dbl&gt;\n 1      1               7.08\n 2      2              11.2 \n 3      3               9.85\n 4      4              10   \n 5      5               8.54\n 6      6              10.5 \n 7      7               9.38\n 8      8              10.6 \n 9      9              10.8 \n10     10              11.4 \n# ℹ 21 more rows\n\n\n\nbob_ross_longer &lt;- bob_ross %&gt;%\n  pivot_longer(c(\"Black_Gesso\", \"Bright_Red\", \"Burnt_Umber\", \"Cadmium_Yellow\", \"Dark_Sienna\", \"Indian_Red\", \"Indian_Yellow\", \"Liquid_Black\", \"Liquid_Clear\", \"Midnight_Black\", \"Phthalo_Blue\", \"Phthalo_Green\", \"Prussian_Blue\", \"Sap_Green\", \"Titanium_White\", \"Van_Dyke_Brown\", \"Yellow_Ochre\", \"Alizarin_Crimson\"), names_to = \"Color\", values_to = \"Used\") %&gt;%\n  filter(Used == 1)\n\n#there has to be a better way to do this \nhex_codes &lt;- data.frame(color = c(\"Alizarin_Crimson\", \"Black_Gesso\", \"Bright_Red\", \"Burnt_Umber\", \"Cadmium_Yellow\"), \n                        hex = '#4E1500', '#000000', '#DB0000', '#8A3324', '#FFEC00' )\n\ncolor_density &lt;- ggplot(data = bob_ross_longer, aes(x = season, y = Color, fill = Color)) +\n  geom_density_ridges(alpha = 0.4)\ncolor_density\n\nPicking joint bandwidth of 2.6"
+  },
+  {
+    "objectID": "presentation.html#introduction",
+    "href": "presentation.html#introduction",
+    "title": "Project Presentation",
+    "section": "Introduction",
+    "text": "Introduction\n\nOur project is based on the Bob Ross dataset!\n\nCatalogs the colors used in each painting across all 31 seasons\n\nWe will be using this data to investigate two questions:\n\nHow does Bob Ross’s color use change across time? Which colors are most popular in each season?\nWhich seasons have the most diverse color palettes? Which seasons have the most abundant color palettes?"
+  },
+  {
+    "objectID": "presentation.html",
+    "href": "presentation.html",
+    "title": "Project Presentation",
+    "section": "",
+    "text": "Your presentation should generally follow the same structure as your write-up.\nEach team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time.\nYour presentation will be created using Quarto, which allows you to write slides using the same coding structure you’re used to with Rmarkdown.\nThis is a sample Quarto slide template you can edit to your desire to create your presentation."
+  },
+  {
+    "objectID": "presentation.html#question-1",
+    "href": "presentation.html#question-1",
+    "title": "Project Presentation",
+    "section": "Question 1",
+    "text": "Question 1"
   }
 ]

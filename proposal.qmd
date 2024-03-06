@@ -3,7 +3,8 @@ title: "Project Proposal"
 authors: "Emma Campbell, Gus Compton, Harper Lethin, Maya Gutierez"
 format: html
 editor: visual
-message: false
+editor_options: 
+  message: false
 ---
 
 # Proposal

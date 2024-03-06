@@ -1,0 +1,9 @@
+---
+title: "Project Proposal"
+authors: "Emma Campbell, Gus Compton, Harper Lethin, Maya Gutierez"
+format: html
+editor: visual
+editor_options: 
+  message: false
+---
+
