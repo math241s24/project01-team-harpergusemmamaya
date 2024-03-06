@@ -7,3 +7,54 @@ editor_options:
   message: false
 ---
 
+# **Write-up**
+
+Your write-up should consist of three parts:
+
+## **Introduction (1-2 paragraphs):**
+
+The”bob_ross_paintings” dataset we chose is a comprehensive collection of data about the paintings made by Bob Ross on his public television show. Each painting is an observation and the name of each painting is saved. Each painting's season and episode are recorded as well as a list of the colors used. Both the code for each color and the name for each color is documented. A url is also included in each observation allowing those inspecting the data set to be able to inspect the paintings themselves.   Some of the more commonly used colors were saved as variables with an indicator value of 1 or 0 showing whether or not that color was used. The number of unique or uncommon colors were recorded as well. 
+
+### **Question 1:**
+
+How did Bob Ross's color choices change over time?
+
+#### Introduction (1-2 paragraphs):
+
+As you all may know, Bob Ross made a total of 31 seasons. We wondered how consistent Bob Ross was over time. Were there colors that were used more frequently than others? Were there colors used commonly then not at all. All these questions could be answered by inspecting the distribution of common colors over time.
+
+#### Approach (1-2 paragraphs):
+
+We decided that a density plot would answer our questions. Bob Ross's most common colors were already defined and if they were present in a painting there was a binary indicator. We altered the data-set using the pivot_longer function. We made a new column that specified color with the color name as the value. Color essentially ecame a variably we could map. We put the color name on the y-axis and season number on the x-axis. We were able to see the distribution of each color over the course of 31 seasons.
+
+#### Analysis (2-3 code blocks, 2 figures, text/code comments as needed):
+
+In this section, provide the code that generates your plots. Use scale functions to provide nice axis labels and guides. You are welcome to use theme functions to customize the appearance of your plot, but you are not required to do so. All plots must be made with ggplot2. Do not use base R or lattice plotting functions.
+
+#### Discussion (1-3 paragraphs):
+
+In the Discussion section, interpret the results of your analysis. Identify any trends revealed (or not revealed) by the plots. Speculate about why the data looks the way it does.
+
+### **Question 2:**
+
+Which seasons have the most diverse color palettes? Which seasons have the most abundant color palettes?
+
+#### Introduction (1-2 paragraphs):
+
+After inspecting the trends of color over time, we were intrigued by Bob Ross's color use. We became concerned about color diversity
+
+#### Approach (1-2 paragraphs):
+
+We decided that a density plot would answer our questions. Bob Ross's most common colors were already defined and if they were present in a painting there was a binary indicator. We altered the data-set using the pivot_longer function. We made a new column that specified color with the color name as the value. We put the color name on the y-axis and season number on the x-axis. We were able to see the distribution of each color over the course of 31 seasons.
+
+#### Analysis (2-3 code blocks, 2 figures, text/code comments as needed):
+
+In this section, provide the code that generates your plots. Use scale functions to provide nice axis labels and guides. You are welcome to use theme functions to customize the appearance of your plot, but you are not required to do so. All plots must be made with ggplot2. Do not use base R or lattice plotting functions.
+
+#### Discussion (1-3 paragraphs):
+
+In the Discussion section, interpret the results of your analysis. Identify any trends revealed (or not revealed) by the plots. Speculate about why the data looks the way it does.
+
+We encourage you to be concise. A paragraph should typically not be longer than 5 sentences.
+
+You are not required to perform any statistical tests in this project, but you may do so if you find it helpful to answer your question.
