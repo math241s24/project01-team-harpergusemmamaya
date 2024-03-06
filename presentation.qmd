@@ -12,6 +12,10 @@ editor_options:
   message: false
 ---
 
+## Bob Ross's Paintings
+
+![](/_site/Analysis_files/figure-html/Bob_at_Easel.jpeg)
+
 ## Introduction
 
 -   Our project is based on the Bob Ross dataset!
