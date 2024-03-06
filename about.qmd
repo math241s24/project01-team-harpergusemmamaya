@@ -4,4 +4,4 @@ format: html
 editor: visual
 ---
 
-This project is developed by **Adrien** as a template for the first mini-project of Math/Stat 241 at Reed College.
+This project is for the first mini-project of Math/Stat 241 at Reed College, by Emma Campbell, Gus Compton, Maya Gutierrez, and Harper Lethin.

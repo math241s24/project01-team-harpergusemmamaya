@@ -2,10 +2,11 @@
 title: "Analysis"
 output: html_document
 date: "2024-03-03"
+message: false
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE) 
 ```
 
 ```{r}
@@ -13,6 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
+library(ggridges)
 ```
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Project Presentation"
-subtitle: "The data we have chosen"
+subtitle: "Bob Ross's paintings"
 format: 
   revealjs
 highlight-style: a11y
@@ -9,22 +9,45 @@ execute:
   echo: true
 editor_options: 
   chunk_output_type: console
+  message: false
 ---
 
 ## Outline
 
-* Your presentation should generally follow the same structure as your write-up. 
+-   Your presentation should generally follow the same structure as your write-up.
 
-* Each team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time. 
+-   Each team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time.
 
-* Your presentation will be created using `Quarto`, which allows you to write slides using the same coding structure you’re used to with `Rmarkdown`. 
+-   Your presentation will be created using `Quarto`, which allows you to write slides using the same coding structure you’re used to with `Rmarkdown`.
 
-* This is a sample Quarto slide template you can edit to your desire to create your presentation. 
+-   This is a sample Quarto slide template you can edit to your desire to create your presentation.
 
 ## Rubric
 
-* Roughly I recommend 1 slide for introduction, 2 slides for Question 1, ans 2 slides for Question 2. 
-  + You can imagine spending roughly one minute on each slide.
-  + You should feel free to have more (or fewer) slides. 
-  
-* Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&A (question and answer). We don’t care how many slides you use to do this.
+-   Roughly I recommend 1 slide for introduction, 2 slides for Question 1, ans 2 slides for Question 2.
+    -   You can imagine spending roughly one minute on each slide.
+    -   You should feel free to have more (or fewer) slides.
+-   Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&A (question and answer). We don’t care how many slides you use to do this.
+
+## Introduction
+
+-   Our project is based on the Bob Ross dataset!
+    -   Catalogs the colors used in each painting across all 31 seasons 
+-   We will be using this data to investigate two questions: 
+    1.    How does Bob Ross's color use change across time? Which colors are most popular in each season?
+    2.    Which seasons have the most diverse color palettes? Which seasons have the most abundant color palettes?
+    
+## Question 1
+
+![Bob Ross's color use across seasons](/_site/Analysis_files/figure-html/unnamed-chunk-4-1.png)
+## Question 1
+
+![Bob Ross's color use across seasons](/_site/Analysis_files/figure-html/unnamed-chunk-4-1.png)
+
+## Question 2
+
+![Simpson's Diversity across seasons](/_site/Analysis_files/figure-html/unnamed-chunk-4-1.png)
+
+## Question 2
+
+![Bob Ross's color use across seasons](/_site/Analysis_files/figure-html/unnamed-chunk-4-1.png)
