@@ -33,14 +33,21 @@ abundant_colors
 ```{r}
 bob_ross_longer <- bob_ross %>%
   pivot_longer(c("Black_Gesso", "Bright_Red", "Burnt_Umber", "Cadmium_Yellow", "Dark_Sienna", "Indian_Red", "Indian_Yellow", "Liquid_Black", "Liquid_Clear", "Midnight_Black", "Phthalo_Blue", "Phthalo_Green", "Prussian_Blue", "Sap_Green", "Titanium_White", "Van_Dyke_Brown", "Yellow_Ochre", "Alizarin_Crimson"), names_to = "Color", values_to = "Used") %>%
-  filter(Used == 1)
+  filter(Used == 1) 
 
 #there has to be a better way to do this 
-hex_codes <- data.frame(color = c("Alizarin_Crimson", "Black_Gesso", "Bright_Red", "Burnt_Umber", "Cadmium_Yellow"), 
-                        hex = '#4E1500', '#000000', '#DB0000', '#8A3324', '#FFEC00' )
+hex_codes <- data.frame(color = c("Alizarin_Crimson", "Black_Gesso", "Bright_Red", "Burnt_Umber", "Cadmium_Yellow", "Dark_Sienna", "Indian_Yellow", "Liquid_Black", "Liquid_Clear", "Midnight_Black", "Phthalo_Blue", "Phthalo_Green", "Prussian_Blue", "Sap_Green", "Titanium_White", "Van_Dyke_Brown", "Yellow_Ochre"), 
+                        hex = c('#4E1500', '#000000', '#DB0000', '#8A3324', '#FFEC00', '#5F2E1F', '#FFB800', '#000000', '#FFFFFF', '#000000', '#0C0040', '#102E3C', '#021E44', '#0A3410', '#FFFFFF', '#221B15', '#C79B00'), 
+                        hex_adjusted = c('#4E1500', '#828181', '#DB0000', '#8A3324', '#FFEC00', '#5F2E1F', '#FFB800', '#C9C8C8', '#D8F8FD', '#000000', '#3115AD', '#2281AD', '#064AA6', '#187525', '#FFFFFF', '#624428', '#C79B00')
+                        )
+
+hex_assign = c("Alizarin_Crimson" = '#4E1500', "Black_Gesso" = '#828181', "Bright_Red" = '#DB0000', "Burnt_Umber" = '#8A3324', "Cadmium_Yellow" = '#FFEC00', "Dark_Sienna" = '#5F2E1F', "Indian_Yellow" = '#FFB800', "Liquid_Black" = '#C9C8C8', "Liquid_Clear" = '#D8F8FD', "Midnight_Black" = '#000000', "Phthalo_Blue" = '#3115AD', "Phthalo_Green" = '#2281AD', "Prussian_Blue" = '#064AA6', "Sap_Green" = '#187525', "Titanium_White" = '#FFFFFF', "Van_Dyke_Brown" = '#624428', "Yellow_Ochre" = '#C79B00')
 
 color_density <- ggplot(data = bob_ross_longer, aes(x = season, y = Color, fill = Color)) +
-  geom_density_ridges(alpha = 0.4)
+  geom_density_ridges(alpha = 0.7) +
+  scale_fill_manual(values = hex_assign) +
+  theme_classic() +
+  theme(legend.position = "none")
 color_density
 ```
 
