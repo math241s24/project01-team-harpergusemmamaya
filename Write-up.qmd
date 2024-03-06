@@ -6,4 +6,3 @@ editor: visual
 editor_options: 
   message: false
 ---
-
