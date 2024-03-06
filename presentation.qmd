@@ -39,4 +39,15 @@ editor_options:
     
 ## Question 1
 
--   
+![Bob Ross's color use across seasons](/_site/Analysis_files/figure-html/unnamed-chunk-4-1.png)
+## Question 1
+
+![Bob Ross's color use across seasons](/_site/Analysis_files/figure-html/unnamed-chunk-4-1.png)
+
+## Question 2
+
+![Simpson's Diversity across seasons](/_site/Analysis_files/figure-html/unnamed-chunk-4-1.png)
+
+## Question 2
+
+![Bob Ross's color use across seasons](/_site/Analysis_files/figure-html/unnamed-chunk-4-1.png)
