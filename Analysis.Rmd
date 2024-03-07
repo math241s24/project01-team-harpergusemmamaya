@@ -52,6 +52,13 @@ color_density <- ggplot(data = bob_ross_longer, aes(x = season, y = Color, fill 
   theme_classic() +
   theme(legend.position = "none")
 color_density
+
+color_density2 <- ggplot(data = bob_ross_longer, aes(x = season, fill = Color)) +
+  geom_density(position= 'fill') +
+  scale_fill_manual(values = hex_assign) +
+  theme_classic() +
+  theme()#legend.position = "none")
+color_density2
 ```
 
 ```{r}
