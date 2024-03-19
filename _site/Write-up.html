@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bob Ross Colors - Project Proposal</title>
+<title>Bob Ross Colors - Write-Up</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -115,14 +149,27 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#write-up" id="toc-write-up" class="nav-link active" data-scroll-target="#write-up"><strong>Write-up</strong></a>
+  <ul class="collapse">
+  <li><a href="#introduction-1-2-paragraphs" id="toc-introduction-1-2-paragraphs" class="nav-link" data-scroll-target="#introduction-1-2-paragraphs"><strong>Introduction (1-2 paragraphs):</strong></a>
+  <ul class="collapse">
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1"><strong>Question 1:</strong></a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2"><strong>Question 2:</strong></a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Proposal</h1>
+<h1 class="title">Write-Up</h1>
 </div>
 
 
@@ -143,8 +190,204 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="write-up" class="level1">
+<h1><strong>Write-up</strong></h1>
+<section id="introduction-1-2-paragraphs" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-1-2-paragraphs"><strong>Introduction (1-2 paragraphs):</strong></h2>
+<p>The”bob_ross_paintings” dataset we chose is a comprehensive collection of data about the paintings made by Bob Ross on his public television show. Each painting is an observation and the name of each painting is saved. Each painting’s season and episode are recorded as well as a list of the colors used. Both the code for each color and the name for each color is documented. A url is also included in each observation allowing those inspecting the data set to be able to inspect the paintings themselves. &nbsp; Some of the more commonly used colors were saved as variables with an indicator value of 1 or 0 showing whether or not that color was used. The number of unique or uncommon colors were recorded as well.&nbsp;</p>
+<section id="question-1" class="level3">
+<h3 class="anchored" data-anchor-id="question-1"><strong>Question 1:</strong></h3>
+<p>How did Bob Ross’s color choices change over time?</p>
+<section id="introduction-1-2-paragraphs-1" class="level4">
+<h4 class="anchored" data-anchor-id="introduction-1-2-paragraphs-1"><strong>Introduction (1-2 paragraphs):</strong></h4>
+<p>As you all may know, Bob Ross made a total of 31 seasons. We wondered how consistent Bob Ross was over time. Were there colors that were used more frequently than others? Were there colors used commonly then not at all. All these questions could be answered by inspecting the distribution of common colors over time.</p>
+</section>
+<section id="approach-1-2-paragraphs" class="level4">
+<h4 class="anchored" data-anchor-id="approach-1-2-paragraphs"><strong>Approach (1-2 paragraphs):</strong></h4>
+<p>We decided that a density plot would answer our questions. Bob Ross’s most common colors were already defined and if they were present in a painting there was a binary indicator. We altered the data-set using the pivot_longer function. We made a new column that specified color with the color name as the value. Color essentially became a variable we could map. We put the color name on the y-axis and season number on the x-axis. We were able to see the distribution of each color over the course of 31 seasons.</p>
+</section>
+<section id="analysis-2-3-code-blocks-2-figures-textcode-comments-as-needed" class="level4">
+<h4 class="anchored" data-anchor-id="analysis-2-3-code-blocks-2-figures-textcode-comments-as-needed"><strong>Analysis (2-3 code blocks, 2 figures, text/code comments as needed):</strong></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: permute
+Loading required package: lattice
+This is vegan 2.6-4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>bob_ross <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/bob_ross_paintings.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+Rows: 403 Columns: 28
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(5): img_src, painting_title, youtube_src, colors, color_hex dbl (23): ...1,
+painting_index, season, episode, num_colors, Black_Gesso, Br...
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -&gt; `...1`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(bob_ross)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bob_ross_longer <span class="ot">&lt;-</span> bob_ross <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">c</span>(<span class="st">"Black_Gesso"</span>, <span class="st">"Bright_Red"</span>, <span class="st">"Burnt_Umber"</span>, <span class="st">"Cadmium_Yellow"</span>, <span class="st">"Dark_Sienna"</span>, <span class="st">"Indian_Red"</span>, <span class="st">"Indian_Yellow"</span>, <span class="st">"Liquid_Black"</span>, <span class="st">"Liquid_Clear"</span>, <span class="st">"Midnight_Black"</span>, <span class="st">"Phthalo_Blue"</span>, <span class="st">"Phthalo_Green"</span>, <span class="st">"Prussian_Blue"</span>, <span class="st">"Sap_Green"</span>, <span class="st">"Titanium_White"</span>, <span class="st">"Van_Dyke_Brown"</span>, <span class="st">"Yellow_Ochre"</span>, <span class="st">"Alizarin_Crimson"</span>), <span class="at">names_to =</span> <span class="st">"Color"</span>, <span class="at">values_to =</span> <span class="st">"Used"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Used <span class="sc">==</span> <span class="dv">1</span>) </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>hex_assign <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Alizarin_Crimson"</span> <span class="ot">=</span> <span class="st">'#4E1500'</span>, <span class="st">"Black_Gesso"</span> <span class="ot">=</span> <span class="st">'#828181'</span>, <span class="st">"Bright_Red"</span> <span class="ot">=</span> <span class="st">'#DB0000'</span>, <span class="st">"Burnt_Umber"</span> <span class="ot">=</span> <span class="st">'#8A3324'</span>, <span class="st">"Cadmium_Yellow"</span> <span class="ot">=</span> <span class="st">'#FFEC00'</span>, <span class="st">"Dark_Sienna"</span> <span class="ot">=</span> <span class="st">'#5F2E1F'</span>, <span class="st">"Indian_Yellow"</span> <span class="ot">=</span> <span class="st">'#FFB800'</span>, <span class="st">"Liquid_Black"</span> <span class="ot">=</span> <span class="st">'#C9C8C8'</span>, <span class="st">"Liquid_Clear"</span> <span class="ot">=</span> <span class="st">'#D8F8FD'</span>, <span class="st">"Midnight_Black"</span> <span class="ot">=</span> <span class="st">'#000000'</span>, <span class="st">"Phthalo_Blue"</span> <span class="ot">=</span> <span class="st">'#3115AD'</span>, <span class="st">"Phthalo_Green"</span> <span class="ot">=</span> <span class="st">'#2281AD'</span>, <span class="st">"Prussian_Blue"</span> <span class="ot">=</span> <span class="st">'#064AA6'</span>, <span class="st">"Sap_Green"</span> <span class="ot">=</span> <span class="st">'#187525'</span>, <span class="st">"Titanium_White"</span> <span class="ot">=</span> <span class="st">'#FFFFFF'</span>, <span class="st">"Van_Dyke_Brown"</span> <span class="ot">=</span> <span class="st">'#624428'</span>, <span class="st">"Yellow_Ochre"</span> <span class="ot">=</span> <span class="st">'#C79B00'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>color_density <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> bob_ross_longer, <span class="fu">aes</span>(<span class="at">x =</span> season, <span class="at">y =</span> Color, <span class="at">fill =</span> Color)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> hex_assign) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Use of each color across all 31 seasons"</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>color_density</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Picking joint bandwidth of 2.6</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Write-up_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>color_density2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> bob_ross_longer, <span class="fu">aes</span>(<span class="at">x =</span> season, <span class="at">fill =</span> Color)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">position=</span> <span class="st">'fill'</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> hex_assign) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>()<span class="sc">+</span><span class="co">#legend.position = "none")</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Palette proportions across all 31 seasons"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>color_density2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Groups with fewer than two data points have been dropped.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 rows containing missing values (`position_stack()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Write-up_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="discussion-1-3-paragraphs" class="level4">
+<h4 class="anchored" data-anchor-id="discussion-1-3-paragraphs"><strong>Discussion (1-3 paragraphs):</strong></h4>
+<p>Immediately distributions of color usage were apparent with the density graphs. Both Burnt ember and Phthalo Green, for example, peaked between season 1 and 10. Prussian Blue and Liquid Black seemed to peak during the middle of seasons. Liquid Clear and Black Gresso were most used after season 15. Other colors were consistent through all the seasons; Yellow Ochre, Van Dyke Brown, Titanium White, Sapphire Green, Phthalo Blue, Indian Yellow, Cadmium Yellow, Bright Red, Alizarin Crimson.&nbsp;</p>
+<p>The second plot, I believe, allowed us to compare the colors in relation to each other. Although both Burnt Ember and Phthalo Green peaked in their individual usage, Burnt Ember was objectively the most commonly used color at the time. Liquid clear not only peaked in the later seasons, but was used more often than other colors. Although the density graphs by color do support this assertion, this additional graph makes comparison much easier.&nbsp;</p>
+</section>
+</section>
+<section id="question-2" class="level3">
+<h3 class="anchored" data-anchor-id="question-2"><strong>Question 2:</strong></h3>
+<p>Which seasons have the most diverse color palettes? Which seasons have the most abundant color palettes?</p>
+<section id="introduction-1-2-paragraphs-2" class="level4">
+<h4 class="anchored" data-anchor-id="introduction-1-2-paragraphs-2"><strong>Introduction (1-2 paragraphs):</strong></h4>
+<p>After inspecting the trends of color over time, we were intrigued by Bob Ross’s color use. Although we knew how individual color usage fluctuated over time, we wanted to know how the variety of colors changed over time as well.&nbsp;&nbsp;</p>
+</section>
+<section id="approach-1-2-paragraphs-1" class="level4">
+<h4 class="anchored" data-anchor-id="approach-1-2-paragraphs-1"><strong>Approach (1-2 paragraphs):</strong></h4>
+<p>We decided on using two different methods for calculating diversity. We actually used indexes typically common with calculating species density in nature.&nbsp;</p>
+<p>The first was the Simpson’s diversity index, which is a measure of diversity which takes into account the number of species present, as well as the relative abundance of each species. The inverse scale ranges from 0 to 1, where 1 represents infinite diversity and 0 represents no diversity.&nbsp;&nbsp;</p>
+<p>The second measure of diversity we used was the Shannon Diversity index, which is in terms of H. The higher the H, the higher the diversity of species in a particular community. The lower the value of H, the lower the diversity . A value of H=0 indicates that there is only one species in a community. The Shannon diversity index takes into account richness and evenness, which is slightly different from the Simpson’s diversity index. Typical ranges in this scale are between 1.5 and 3.5.&nbsp;</p>
+</section>
+<section id="analysis-2-3-code-blocks-2-figures-textcode-comments-as-needed-1" class="level4">
+<h4 class="anchored" data-anchor-id="analysis-2-3-code-blocks-2-figures-textcode-comments-as-needed-1"><strong>Analysis (2-3 code blocks, 2 figures, text/code comments as needed):</strong></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#species diversity: 2 indices, Simpson and Shannon</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Data wrangling:</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>tidybob <span class="ot">&lt;-</span> bob_ross <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(painting_index, painting_title, season, Black_Gesso, Bright_Red, Burnt_Umber, Cadmium_Yellow, Dark_Sienna, Indian_Red, Indian_Yellow, Liquid_Black, Liquid_Clear, Midnight_Black, Phthalo_Blue, Phthalo_Green, Prussian_Blue, Sap_Green, Titanium_White, Van_Dyke_Brown, Yellow_Ochre, Alizarin_Crimson)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">c</span>(<span class="st">"Black_Gesso"</span>, <span class="st">"Bright_Red"</span>, <span class="st">"Burnt_Umber"</span>, <span class="st">"Cadmium_Yellow"</span>, <span class="st">"Dark_Sienna"</span>, <span class="st">"Indian_Red"</span>, <span class="st">"Indian_Yellow"</span>, <span class="st">"Liquid_Black"</span>, <span class="st">"Liquid_Clear"</span>, <span class="st">"Midnight_Black"</span>, <span class="st">"Phthalo_Blue"</span>, <span class="st">"Phthalo_Green"</span>, <span class="st">"Prussian_Blue"</span>, <span class="st">"Sap_Green"</span>, <span class="st">"Titanium_White"</span>, <span class="st">"Van_Dyke_Brown"</span>, <span class="st">"Yellow_Ochre"</span>, <span class="st">"Alizarin_Crimson"</span>), <span class="at">names_to =</span> <span class="st">"color"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#simpson diversity index</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (season_number <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>) {</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filter data for each season</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  temp_data <span class="ot">&lt;-</span> tidybob <span class="sc">%&gt;%</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(season <span class="sc">==</span> season_number) <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(color) <span class="sc">%&gt;%</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(count <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">number =</span> <span class="fu">n</span>())</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate proportion</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  temp_data <span class="ot">&lt;-</span> temp_data <span class="sc">%&gt;%</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">proportion =</span> number<span class="sc">/</span><span class="fu">sum</span>(number))</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Calculate simpson diversity</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  simpsondiversity <span class="ot">&lt;-</span> <span class="fu">diversity</span>(temp_data<span class="sc">$</span>number, <span class="at">index =</span> <span class="st">"simpson"</span>, <span class="at">equalize.groups =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>                      <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">base =</span> <span class="fu">exp</span>(<span class="dv">1</span>))</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co">#shannon diversity index</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (season_number <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>) {</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filter data for each season</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  temp_data2 <span class="ot">&lt;-</span> tidybob <span class="sc">%&gt;%</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(season <span class="sc">==</span> season_number) <span class="sc">%&gt;%</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(color) <span class="sc">%&gt;%</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(count <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">number =</span> <span class="fu">n</span>())</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate proportion</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>  temp_data2 <span class="ot">&lt;-</span> temp_data2 <span class="sc">%&gt;%</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">proportion =</span> number<span class="sc">/</span><span class="fu">sum</span>(number))</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Calculate shannon diversity</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>  shannondiversity <span class="ot">&lt;-</span> <span class="fu">diversity</span>(temp_data2<span class="sc">$</span>number, <span class="at">index =</span> <span class="st">"shannon"</span>, <span class="at">equalize.groups =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>                      <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">base =</span> <span class="fu">exp</span>(<span class="dv">1</span>))</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>seasonno <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">24</span>, <span class="dv">25</span>, <span class="dv">26</span>, <span class="dv">27</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">30</span>, <span class="dv">31</span>)</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>simpsond <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.8780718</span>, <span class="fl">0.9190012</span>, <span class="fl">0.9171143</span>, <span class="fl">0.9195266</span>, <span class="fl">0.917458</span>, <span class="fl">0.9154412</span>, <span class="fl">0.9187046</span>, <span class="fl">0.9170342</span>, <span class="fl">0.9180612</span>, <span class="fl">0.9208364</span>, <span class="fl">0.918457</span>, <span class="fl">0.9237076</span>, <span class="fl">0.9206671</span>, <span class="fl">0.9240631</span>, <span class="fl">0.9222083</span>, <span class="fl">0.9203609</span>, <span class="fl">0.9223511</span>, <span class="fl">0.9223934</span>, <span class="fl">0.9235672</span>, <span class="fl">0.9208107</span>, <span class="fl">0.927097</span>, <span class="fl">0.9236437</span>, <span class="fl">0.9233942</span>, <span class="fl">0.9257509</span>, <span class="fl">0.9232818</span>, <span class="fl">0.9262543</span>, <span class="fl">0.9280345</span>, <span class="fl">0.9204545</span>, <span class="fl">0.9241835</span>, <span class="fl">0.9253637</span>, <span class="fl">0.9246181</span>)</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>shannond <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.131576</span>, <span class="fl">2.530038</span>, <span class="fl">2.54985</span>, <span class="fl">2.566073</span>, <span class="fl">2.565492</span>, <span class="fl">2.504565</span>, <span class="fl">2.549228</span>, <span class="fl">2.535804</span>, <span class="fl">2.562325</span>, <span class="fl">2.578084</span>, <span class="fl">2.550194</span>, <span class="fl">2.627699</span>, <span class="fl">2.572248</span>, <span class="fl">2.612864</span>, <span class="fl">2.595449</span>, <span class="fl">2.566761</span>, <span class="fl">2.602236</span>, <span class="fl">2.612732</span>, <span class="fl">2.620094</span>, <span class="fl">2.584851</span>, <span class="fl">2.653685</span>, <span class="fl">2.622077</span>, <span class="fl">2.61255</span>, <span class="fl">2.647941</span>, <span class="fl">2.611549</span>, <span class="fl">2.642795</span>, <span class="fl">2.689755</span>, <span class="fl">2.591084</span>, <span class="fl">2.623845</span>, <span class="fl">2.633915</span>, <span class="fl">2.647335</span>)</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>diversity_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(seasonno, simpsond, shannond)</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>diversity_results <span class="sc">%&gt;%</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> seasonno, <span class="at">y =</span> simpsond)) <span class="sc">+</span></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Season"</span>, <span class="at">y =</span> <span class="st">"Simpson diversity index"</span>, <span class="at">title =</span> <span class="st">"Species diversity of colors in Bob Ross paintings over time"</span>) <span class="sc">+</span></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Write-up_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>diversity_results <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> seasonno, <span class="at">y =</span> shannond)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Season"</span>, <span class="at">y =</span> <span class="st">"Shannon diversity index"</span>, <span class="at">title =</span> <span class="st">"Species diversity of colors in Bob Ross paintings over time"</span>) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Write-up_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="discussion-1-3-paragraphs-1" class="level4">
+<h4 class="anchored" data-anchor-id="discussion-1-3-paragraphs-1"><strong>Discussion (1-3 paragraphs):</strong></h4>
+<p>We used the mutate function to calculate Simpson Diversity Index and Shannon Diversity Index values for each season. There was one point for every season. Looking at the two distinct graphs, both give the impression that color diversity increased over the 30 seasons. Both graphs have the lowest calculated diversity value for the first season and then ending at the higher end of the calculated diversity values.&nbsp;</p>
+<p>One explanation from the sharp change after season 1 for diversity could be answered by our work in color distribution. Burnt Ember objectively was such a commonly used color in the earlier seasons. The lessened use of Burnt Ember and increased use of other colors after the first few seasons can explain the apparent shift in color diversity over the course of 30 seasons.&nbsp;</p>
 
 
+</section>
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

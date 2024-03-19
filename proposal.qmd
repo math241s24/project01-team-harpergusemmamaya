@@ -20,10 +20,14 @@ The dataset we chose is a comprehensive collection of data about the paintings m
 -   We're using the bob ross dataset (https://github.com/jwilber/Bob_Ross_Paintings/blob/master/data/bob_ross_paintings.csv)\
 
 -   We chose to use this dataset because we're fans of Bob Ross and curious about how systematic he may or may not be in his color use across seasons.
+
 -   The two questions we want to answer are:
+
     1.  How does bob Ross's color use change across time? Which colors are most popular in each season?
     2.  Which seasons have the most diverse color palettes? Which seasons have the most abundant color palettes?
+
 -   Our plans to answer each question are:
+
     1.  Make a new variable combining season and episode using the mutate function. Make density plots/barplot for each color using that new time variable as the x-axis.
     2.  Use the summarize function to count the average number of colors in each season, then use Simpson's diversity index to measure how diverse the color palettes are:
         -   Diversity = 1 - sum(n(n-1)/N(N-1)), where: - n = \# times a color is used - N = \# times any color is used
