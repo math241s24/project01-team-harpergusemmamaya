@@ -11,7 +11,7 @@ editor_options:
 
 ## **Introduction (1-2 paragraphs):**
 
-The”bob_ross_paintings” dataset we chose is a comprehensive collection of data about the paintings made by Bob Ross on his public television show. Each painting is an observation and the name of each painting is saved. Each painting's season and episode are recorded as well as a list of the colors used. Both the code for each color and the name for each color is documented. A url is also included in each observation allowing those inspecting the data set to be able to inspect the paintings themselves.   Some of the more commonly used colors were saved as variables with an indicator value of 1 or 0 showing whether or not that color was used. The number of unique or uncommon colors were recorded as well. 
+The"bob_ross_paintings" dataset we chose is a comprehensive collection of data about the paintings made by Bob Ross on his public television show. Each painting is an observation and the name of each painting is saved. Each painting's season and episode are recorded as well as a list of the colors used. Both the code for each color and the name for each color is documented. A url is also included in each observation allowing those inspecting the data set to be able to inspect the paintings themselves.   Some of the more commonly used colors were saved as variables with an indicator value of 1 or 0 showing whether or not that color was used. The number of unique or uncommon colors were recorded as well. 
 
 ### **Question 1:**
 
@@ -81,9 +81,9 @@ After inspecting the trends of color over time, we were intrigued by Bob Ross's 
 
 We decided on using two different methods for calculating diversity. We actually used indexes typically common with calculating species density in nature. 
 
-The first was the Simpson’s diversity index, which is a measure of diversity which takes into account the number of species present, as well as the relative abundance of each species. The inverse scale ranges from 0 to 1, where 1 represents infinite diversity and 0 represents no diversity.  
+The first was the Simpson's diversity index, which is a measure of diversity which takes into account the number of species present, as well as the relative abundance of each species. The inverse scale ranges from 0 to 1, where 1 represents infinite diversity and 0 represents no diversity.  
 
-The second measure of diversity we used was the Shannon Diversity index, which is in terms of H. The higher the H, the higher the diversity of species in a particular community. The lower the value of H, the lower the diversity . A value of H=0 indicates that there is only one species in a community. The Shannon diversity index takes into account richness and evenness, which is slightly different from the Simpson’s diversity index. Typical ranges in this scale are between 1.5 and 3.5. 
+The second measure of diversity we used was the Shannon Diversity index, which is in terms of H. The higher the H, the higher the diversity of species in a particular community. The lower the value of H, the lower the diversity . A value of H=0 indicates that there is only one species in a community. The Shannon diversity index takes into account richness and evenness, which is slightly different from the Simpson's diversity index. Typical ranges in this scale are between 1.5 and 3.5. 
 
 #### **Analysis (2-3 code blocks, 2 figures, text/code comments as needed):**
 

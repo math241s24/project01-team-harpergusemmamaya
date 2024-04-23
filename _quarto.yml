@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: Bob Ross Colors
@@ -9,7 +10,7 @@ website:
         href: https://github.com/math241s24/project01-team-harpergusemmamaya.git
     left:
       - text: Project
-        href: index.qmd
+        href: Write-up.qmd
       - text: "Proposal"
         href: proposal.qmd
       - text: "Presentation"
